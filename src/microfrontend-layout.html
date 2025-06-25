@@ -1,25 +1,12 @@
 <single-spa-router>
-  <!--
-
-    This is the single-spa Layout Definition for your microfrontends.
-    See https://single-spa.js.org/docs/layout-definition/ for more information.
-
-  -->
-
-  <!-- Example layouts you might find helpful:
-
-  <nav>
-    <application name="@org/navbar"></application>
-  </nav>
-  <route path="settings">
-    <application name="@org/settings"></application>
-  </route>
-
-  -->
-
   <main>
-    <route path="/login">
+    <redirect from="/" to="/login"></redirect>
+    <redirect from="/dashboard/login" to="/login"></redirect>
+    <route path="login">
       <application name="@emumba/auth-mfe"></application>
+    </route>
+    <route path="dashboard">
+      <application name="@emumba/dashboard-mfe"></application>
     </route>
   </main>
 </single-spa-router>
